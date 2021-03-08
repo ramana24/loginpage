@@ -1,0 +1,41 @@
+<mvc:View
+    controllerName="ux.loginpage.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+                    <VBox class="sapUiResponsiveMargin center"> 
+                        
+						<VBox class="sapUiLargeMarginBeginEnd sapUiLargeMarginTop">
+							<HBox>
+								<Label  text="Username" tooltip="Use your e-mail id " required="true"></Label>
+								<Input id="mail" type="Email" width="10rem" value=""></Input>
+							</HBox>
+						</VBox>
+						<VBox class="sapUiLargeMarginBeginEnd">
+							<HBox>
+								<Label  text="Password" required="true"></Label>
+								<Input id="pwd" width="10rem" type="Password" value=""></Input>
+							</HBox>
+						</VBox>
+						<HBox class="sapUiMediumMarginBegin">
+							<Button class="sapUiSizeCompact" text="Login" type="Default" press="login"></Button>
+							<Button class="sapUiSizeCompact sapUiTinyMarginBegin" text="SignUp" type="Emphasized" press="onSignupPress"></Button>
+						</HBox>
+						</VBox>
+                    
+                    
+                    
+                    
+                    
+                     </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
