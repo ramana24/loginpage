@@ -3,18 +3,26 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
+	
 >
 	<Shell id="shell">
 		<App id="app">
 			<pages>
-				<Page id="page" title="{i18n>title}">
+				<Page class="titleCenter" id="page" titleAlignment="Center" title="{i18n>title}">
 					<content>
-                    <VBox class="sapUiResponsiveMargin center"> 
+
+					<Panel expandable="true" headerText="SignUp" width="auto" class="sapUiResponsiveMargin">
+		<content>
+			<!-- <Text text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat" /> -->
+	
+                    <VBox class="sapUiResponsiveMargin "> 
                         
 						<VBox class="sapUiLargeMarginBeginEnd sapUiLargeMarginTop">
 							<HBox>
+
+							
 								<Label  text="Username" tooltip="Use your e-mail id " required="true"></Label>
-								<Input id="mail" type="Email" width="10rem" value=""></Input>
+								<Input id="mail" type="Email" width="10rem" value="" submit="onEmailSelect" ></Input>
 							</HBox>
 						</VBox>
 						<VBox class="sapUiLargeMarginBeginEnd">
@@ -29,9 +37,95 @@
 						</HBox>
 						</VBox>
                     
+                    	</content>
+	</Panel>
                     
-                    
-                    
+              
+					<Panel expandable="true" expanded="true" headerText="L'OREAL Brands" width="auto" class="sapUiResponsiveMargin">
+		<content>
+		
+<Table id="idProductsTable"
+		inset="false"
+		growing="true"
+		alternateRowColors="true"
+		items="{/ProductSet}"
+		>
+	<headerToolbar>
+					<OverflowToolbar>
+					<Button	icon="sap-icon://download" press="onExport" />
+						<ToolbarSpacer/>
+						<SearchField search="onSearch" width="17.5rem"/>
+					</OverflowToolbar>
+				</headerToolbar>
+		<columns>
+			<Column
+				id="productCol"
+				mergeDuplicates="true"
+				width="12em">
+				<Text text="Product" />
+			</Column>
+			<Column
+				id="supplierCol"
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Supplier" />
+			</Column>
+			<Column
+				id="dimensionsCol"
+				minScreenWidth="Tablet"
+				demandPopin="true"
+				hAlign="End">
+				<Text text="Dimensions" />
+			</Column>
+			<Column
+				id="weightCol"
+				minScreenWidth="Tablet"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="Weight" />
+			</Column>
+			<Column
+				id="priceCol"
+				hAlign="End">
+				<Text text="Price" />
+			</Column>
+		</columns>
+<items>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier
+						title="{ProductID}"
+						titleActive="true"
+						text="{Category}" titlePress="login"/>
+					<Text
+						text="{SupplierName}" />
+					<Text
+						text="{Width} x {Depth} x {Height} {DimUnit}" />
+					<ObjectNumber
+						number="{WeightMeasure}"
+						unit="{path:'WeightUnit',
+						
+						formatter:'ux.loginpage.util.formatter.Measure'
+						}"
+						state="{path:'WeightUnit',
+						
+						formatter:'ux.loginpage.util.formatter.MeasureState'
+						}" />
+					<ObjectNumber
+							number="{
+								parts:[{path:'Price'},{path:'CurrencyCode'}],
+								type: 'sap.ui.model.type.Currency',
+								formatOptions: {showMeasure: false}
+							}"
+							unit="{CurrencyCode}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+
+		</Table>
+
+		</content>
+		</Panel>      
                     
                      </content>
 				</Page>

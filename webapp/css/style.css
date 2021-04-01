@@ -7,3 +7,17 @@
     transform: translate(-50%, -50%);
   width: 400px;
 }
+
+.titleCenter
+{
+  position: relative;
+  top: 1%;
+  left: 50%;
+}
+
+*title
+{
+  position: relative;
+  top: 1%;
+  left: 50%;
+}
