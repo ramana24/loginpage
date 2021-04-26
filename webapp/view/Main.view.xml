@@ -21,7 +21,7 @@
 							<HBox>
 
 							
-								<Label  text="Username" tooltip="Use your e-mail id " required="true"></Label>
+								<Label id="LabelUsername"  text="Username" tooltip="Use your e-mail id " required="true"></Label>
 								<Input id="mail" type="Email" width="10rem" value="" submit="onEmailSelect" ></Input>
 							</HBox>
 						</VBox>
@@ -52,15 +52,17 @@
 		>
 	<headerToolbar>
 					<OverflowToolbar>
-					<Button	icon="sap-icon://download" press="onExport" />
+					<Title text="Products" level="H2"/>
 						<ToolbarSpacer/>
-						<SearchField search="onSearch" width="17.5rem"/>
+					<Button	icon="sap-icon://download" press="onExport" />
+					
+						<SearchField search="onSearch" liveChange="onSearch" width="17.5rem"/>
 					</OverflowToolbar>
 				</headerToolbar>
 		<columns>
 			<Column
 				id="productCol"
-				mergeDuplicates="true"
+				mergeDuplicates="false"
 				width="12em">
 				<Text text="Product" />
 			</Column>
@@ -96,7 +98,7 @@
 					<ObjectIdentifier
 						title="{ProductID}"
 						titleActive="true"
-						text="{Category}" titlePress="login"/>
+						text="{Category}" titlePress="OpenProduct"/>
 					<Text
 						text="{SupplierName}" />
 					<Text

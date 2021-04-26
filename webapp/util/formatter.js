@@ -22,7 +22,7 @@ sap.ui.define(function() {
 	   },
 	   MeasureState : function (oValue){
 		var oValue;
-   
+
 		if(oValue =="G"){
    
 		  return "Warning";

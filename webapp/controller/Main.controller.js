@@ -21,6 +21,13 @@ sap.ui.define([
 				this._sServiceUrl="/sap/opu/odata/iwbep/GWSAMPLE_BASIC/";
 				
             },
+
+			OpenProduct:function(){
+
+			//	if()
+				MessageToast.show("Product Title selected is out of stock");
+				
+			},
 			createColumnConfig: function() {
 				var aCols = [];
 				var EdmType = exportLibrary.EdmType;
@@ -33,9 +40,9 @@ sap.ui.define([
 				});
 	
 				aCols.push({
-					label: 'SupplierName',
+					label: 'SupplierDetails',
 					type: EdmType.String,
-					property: 'SupplierName',
+					property: 'Description',
 					scale: 0
 				});
 	
@@ -64,14 +71,18 @@ sap.ui.define([
 			},
             login:function(){
 
-                var oMail= this.getView().byId("mail").getValue();
+                var Value1= this.getView().byId("mail").getValue();
 				var oPwd =this.getView().byId("pwd").getValue();
 				
-				if(oMail !=="" && oMail===oPwd){
-					MBox.success("Your are logged in.");
+				if(Value1 !=="" && Value1===oPwd){
+				//	MBox.success("Your are logged in.");
+
+				console.log("success");
 				}else{
-					MBox.error("Please verfiy. Username Password combination is incorrect.");
-					}
+				//	MBox.error("Please verfiy. Username Password combination is incorrect.");
+					
+			console.log("error");
+			}
 					
             },
 
